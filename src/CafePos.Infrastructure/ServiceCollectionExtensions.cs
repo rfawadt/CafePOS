@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IPasswordHasher, PasswordHasher>();
         services.AddScoped<IReceiptNumberService, ReceiptNumberService>();
 
-        var printerName = configuration.GetSection("Printer").GetValue<string>("Name");
+        var printerName = configuration["Printer:Name"];
         services.AddScoped<IPrinterService>(_ => new ReceiptPrinterService(printerName));
 
         services.AddSingleton<DatabaseInitializer>();

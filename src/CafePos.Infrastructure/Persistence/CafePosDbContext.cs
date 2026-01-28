@@ -11,73 +11,75 @@ public class CafePosDbContext : DbContext, IPosDbContext
     {
     }
 
-    public DbSet<Store> StoresSet => Set<Store>();
-    public DbSet<Terminal> TerminalsSet => Set<Terminal>();
-    public DbSet<User> UsersSet => Set<User>();
-    public DbSet<Role> RolesSet => Set<Role>();
-    public DbSet<UserRole> UserRolesSet => Set<UserRole>();
-    public DbSet<MenuCategory> MenuCategoriesSet => Set<MenuCategory>();
-    public DbSet<MenuItem> MenuItemsSet => Set<MenuItem>();
-    public DbSet<MenuItemPrice> MenuItemPricesSet => Set<MenuItemPrice>();
-    public DbSet<ModifierGroup> ModifierGroupsSet => Set<ModifierGroup>();
-    public DbSet<ModifierOption> ModifierOptionsSet => Set<ModifierOption>();
-    public DbSet<ItemModifierGroup> ItemModifierGroupsSet => Set<ItemModifierGroup>();
-    public DbSet<TaxCategory> TaxCategoriesSet => Set<TaxCategory>();
-    public DbSet<Order> OrdersSet => Set<Order>();
-    public DbSet<OrderLine> OrderLinesSet => Set<OrderLine>();
-    public DbSet<OrderLineModifier> OrderLineModifiersSet => Set<OrderLineModifier>();
-    public DbSet<PaymentMethod> PaymentMethodsSet => Set<PaymentMethod>();
-    public DbSet<Payment> PaymentsSet => Set<Payment>();
-    public DbSet<Shift> ShiftsSet => Set<Shift>();
-    public DbSet<CashDrawerEvent> CashDrawerEventsSet => Set<CashDrawerEvent>();
-    public DbSet<AppSetting> AppSettingsSet => Set<AppSetting>();
-    public DbSet<AuditLog> AuditLogsSet => Set<AuditLog>();
-    public DbSet<ReceiptSequence> ReceiptSequencesSet => Set<ReceiptSequence>();
+    public DbSet<Store> Stores => Set<Store>();
+    public DbSet<Terminal> Terminals => Set<Terminal>();
+    public DbSet<User> Users => Set<User>();
+    public DbSet<Role> Roles => Set<Role>();
+    public DbSet<UserRole> UserRoles => Set<UserRole>();
+    public DbSet<MenuCategory> MenuCategories => Set<MenuCategory>();
+    public DbSet<MenuItem> MenuItems => Set<MenuItem>();
+    public DbSet<MenuItemPrice> MenuItemPrices => Set<MenuItemPrice>();
+    public DbSet<ModifierGroup> ModifierGroups => Set<ModifierGroup>();
+    public DbSet<ModifierOption> ModifierOptions => Set<ModifierOption>();
+    public DbSet<ItemModifierGroup> ItemModifierGroups => Set<ItemModifierGroup>();
+    public DbSet<TaxCategory> TaxCategories => Set<TaxCategory>();
+    public DbSet<Order> Orders => Set<Order>();
+    public DbSet<OrderLine> OrderLines => Set<OrderLine>();
+    public DbSet<OrderLineModifier> OrderLineModifiers => Set<OrderLineModifier>();
+    public DbSet<PaymentMethod> PaymentMethods => Set<PaymentMethod>();
+    public DbSet<Payment> Payments => Set<Payment>();
+    public DbSet<Shift> Shifts => Set<Shift>();
+    public DbSet<CashDrawerEvent> CashDrawerEvents => Set<CashDrawerEvent>();
+    public DbSet<AppSetting> AppSettings => Set<AppSetting>();
+    public DbSet<AuditLog> AuditLogs => Set<AuditLog>();
+    public DbSet<ReceiptSequence> ReceiptSequences => Set<ReceiptSequence>();
 
-    IQueryable<Store> IPosDbContext.Stores => StoresSet;
-    IQueryable<Terminal> IPosDbContext.Terminals => TerminalsSet;
-    IQueryable<User> IPosDbContext.Users => UsersSet;
-    IQueryable<Role> IPosDbContext.Roles => RolesSet;
-    IQueryable<UserRole> IPosDbContext.UserRoles => UserRolesSet;
-    IQueryable<MenuCategory> IPosDbContext.MenuCategories => MenuCategoriesSet;
-    IQueryable<MenuItem> IPosDbContext.MenuItems => MenuItemsSet;
-    IQueryable<MenuItemPrice> IPosDbContext.MenuItemPrices => MenuItemPricesSet;
-    IQueryable<ModifierGroup> IPosDbContext.ModifierGroups => ModifierGroupsSet;
-    IQueryable<ModifierOption> IPosDbContext.ModifierOptions => ModifierOptionsSet;
-    IQueryable<ItemModifierGroup> IPosDbContext.ItemModifierGroups => ItemModifierGroupsSet;
-    IQueryable<TaxCategory> IPosDbContext.TaxCategories => TaxCategoriesSet;
-    IQueryable<Order> IPosDbContext.Orders => OrdersSet;
-    IQueryable<OrderLine> IPosDbContext.OrderLines => OrderLinesSet;
-    IQueryable<OrderLineModifier> IPosDbContext.OrderLineModifiers => OrderLineModifiersSet;
-    IQueryable<PaymentMethod> IPosDbContext.PaymentMethods => PaymentMethodsSet;
-    IQueryable<Payment> IPosDbContext.Payments => PaymentsSet;
-    IQueryable<Shift> IPosDbContext.Shifts => ShiftsSet;
-    IQueryable<CashDrawerEvent> IPosDbContext.CashDrawerEvents => CashDrawerEventsSet;
-    IQueryable<AppSetting> IPosDbContext.AppSettings => AppSettingsSet;
-    IQueryable<AuditLog> IPosDbContext.AuditLogs => AuditLogsSet;
-    IQueryable<ReceiptSequence> IPosDbContext.ReceiptSequences => ReceiptSequencesSet;
+    IQueryable<Store> IPosDbContext.Stores => Stores;
+    IQueryable<Terminal> IPosDbContext.Terminals => Terminals;
+    IQueryable<User> IPosDbContext.Users => Users;
+    IQueryable<Role> IPosDbContext.Roles => Roles;
+    IQueryable<UserRole> IPosDbContext.UserRoles => UserRoles;
+    IQueryable<MenuCategory> IPosDbContext.MenuCategories => MenuCategories;
+    IQueryable<MenuItem> IPosDbContext.MenuItems => MenuItems;
+    IQueryable<MenuItemPrice> IPosDbContext.MenuItemPrices => MenuItemPrices;
+    IQueryable<ModifierGroup> IPosDbContext.ModifierGroups => ModifierGroups;
+    IQueryable<ModifierOption> IPosDbContext.ModifierOptions => ModifierOptions;
+    IQueryable<ItemModifierGroup> IPosDbContext.ItemModifierGroups => ItemModifierGroups;
+    IQueryable<TaxCategory> IPosDbContext.TaxCategories => TaxCategories;
+    IQueryable<Order> IPosDbContext.Orders => Orders;
+    IQueryable<OrderLine> IPosDbContext.OrderLines => OrderLines;
+    IQueryable<OrderLineModifier> IPosDbContext.OrderLineModifiers => OrderLineModifiers;
+    IQueryable<PaymentMethod> IPosDbContext.PaymentMethods => PaymentMethods;
+    IQueryable<Payment> IPosDbContext.Payments => Payments;
+    IQueryable<Shift> IPosDbContext.Shifts => Shifts;
+    IQueryable<CashDrawerEvent> IPosDbContext.CashDrawerEvents => CashDrawerEvents;
+    IQueryable<AppSetting> IPosDbContext.AppSettings => AppSettings;
+    IQueryable<AuditLog> IPosDbContext.AuditLogs => AuditLogs;
+    IQueryable<ReceiptSequence> IPosDbContext.ReceiptSequences => ReceiptSequences;
 
-    public Task AddAsync<TEntity>(TEntity entity, CancellationToken cancellationToken = default) where TEntity : class
+    Task IPosDbContext.AddAsync<TEntity>(TEntity entity, CancellationToken cancellationToken)
+        where TEntity : class
     {
         return Set<TEntity>().AddAsync(entity, cancellationToken).AsTask();
     }
 
-    public Task AddRangeAsync<TEntity>(IEnumerable<TEntity> entities, CancellationToken cancellationToken = default) where TEntity : class
+    Task IPosDbContext.AddRangeAsync<TEntity>(IEnumerable<TEntity> entities, CancellationToken cancellationToken)
+        where TEntity : class
     {
         return Set<TEntity>().AddRangeAsync(entities, cancellationToken);
     }
 
-    public void Update<TEntity>(TEntity entity) where TEntity : class
+    void IPosDbContext.Update<TEntity>(TEntity entity) where TEntity : class
     {
         Set<TEntity>().Update(entity);
     }
 
-    public void Remove<TEntity>(TEntity entity) where TEntity : class
+    void IPosDbContext.Remove<TEntity>(TEntity entity) where TEntity : class
     {
         Set<TEntity>().Remove(entity);
     }
 
-    public Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+    Task<int> IPosDbContext.SaveChangesAsync(CancellationToken cancellationToken)
     {
         return base.SaveChangesAsync(cancellationToken);
     }

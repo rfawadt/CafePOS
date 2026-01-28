@@ -1,5 +1,6 @@
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Runtime.Versioning;
 using System.Text;
 using CafePos.Application.Interfaces;
 using CafePos.Application.Models;
@@ -19,22 +20,15 @@ public class ReceiptPrinterService : IPrinterService
     {
         var receiptText = BuildReceiptText(data);
 
+        if (!OperatingSystem.IsWindows())
+        {
+            WriteReceiptToFile(receiptText);
+            return Task.CompletedTask;
+        }
+
         try
         {
-            var printDocument = new PrintDocument();
-            if (!string.IsNullOrWhiteSpace(_printerName))
-            {
-                printDocument.PrinterSettings.PrinterName = _printerName;
-            }
-
-            printDocument.PrintPage += (_, args) =>
-            {
-                using var font = new Font("Consolas", 10);
-                args.Graphics.DrawString(receiptText, font, Brushes.Black, new RectangleF(0, 0, args.PageBounds.Width, args.PageBounds.Height));
-                args.HasMorePages = false;
-            };
-
-            printDocument.Print();
+            PrintWindowsReceipt(receiptText);
         }
         catch
         {
@@ -42,6 +36,31 @@ public class ReceiptPrinterService : IPrinterService
         }
 
         return Task.CompletedTask;
+    }
+
+    [SupportedOSPlatform("windows")]
+    private void PrintWindowsReceipt(string receiptText)
+    {
+        using var printDocument = new PrintDocument();
+        if (!string.IsNullOrWhiteSpace(_printerName))
+        {
+            printDocument.PrinterSettings.PrinterName = _printerName;
+        }
+
+        printDocument.PrintPage += (_, args) =>
+        {
+            if (args.Graphics == null)
+            {
+                args.HasMorePages = false;
+                return;
+            }
+
+            using var font = new Font("Consolas", 10);
+            args.Graphics.DrawString(receiptText, font, Brushes.Black, new RectangleF(0, 0, args.PageBounds.Width, args.PageBounds.Height));
+            args.HasMorePages = false;
+        };
+
+        printDocument.Print();
     }
 
     private static string BuildReceiptText(ReceiptData data)

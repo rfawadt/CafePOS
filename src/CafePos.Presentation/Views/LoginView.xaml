@@ -1,0 +1,24 @@
+<UserControl x:Class="CafePos.Presentation.Views.LoginView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CafePos.Presentation.Views">
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Background="White" Padding="40" CornerRadius="16" BorderBrush="#E0E0E0" BorderThickness="1">
+            <StackPanel Width="360">
+                <TextBlock Text="CafePOS" FontSize="32" FontWeight="Bold" Margin="0,0,0,12" />
+                <TextBlock Text="Username" />
+                <TextBox Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Text="Password" />
+                <PasswordBox local:PasswordBoxHelper.BoundPassword="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <TextBlock Foreground="Crimson" Text="{Binding ErrorMessage}" Margin="0,6,0,0" />
+                <Button Content="Log In" Command="{Binding LoginCommand}" Margin="0,12,0,0" Height="56" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

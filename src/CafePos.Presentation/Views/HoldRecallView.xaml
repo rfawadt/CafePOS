@@ -1,0 +1,28 @@
+<UserControl x:Class="CafePos.Presentation.Views.HoldRecallView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Held Orders" FontSize="28" FontWeight="Bold" />
+
+        <Border Grid.Row="1" Background="White" Padding="24" CornerRadius="16" Margin="0,16,0,0">
+            <StackPanel>
+                <ListView ItemsSource="{Binding HeldOrders}" SelectedItem="{Binding SelectedOrder}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Label" Width="180" DisplayMemberBinding="{Binding HeldName}" />
+                            <GridViewColumn Header="Created" Width="180" DisplayMemberBinding="{Binding CreatedAtLocal}" />
+                            <GridViewColumn Header="Total" Width="100" DisplayMemberBinding="{Binding Total}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+                <Button Content="Recall Selected" Command="{Binding RecallCommand}" />
+                <Button Content="Back" Command="{Binding BackCommand}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>

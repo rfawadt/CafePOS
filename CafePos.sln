@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafePos.Domain", "src\\CafePos.Domain\\CafePos.Domain.csproj", "{BEADBD3D-AFC3-4B7B-A985-DFD859EF9634}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafePos.Application", "src\\CafePos.Application\\CafePos.Application.csproj", "{BEA287E8-FE47-49BB-88D0-020A7F9989FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafePos.Infrastructure", "src\\CafePos.Infrastructure\\CafePos.Infrastructure.csproj", "{0C76A413-00A9-41D0-AC26-F8C6A0BBDC8C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafePos.Presentation", "src\\CafePos.Presentation\\CafePos.Presentation.csproj", "{141356B3-F586-4182-9FC4-2202D8D9325E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CafePos.Tests", "tests\\CafePos.Tests\\CafePos.Tests.csproj", "{50F86EE9-FF2E-4208-B19C-3385F070949E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEADBD3D-AFC3-4B7B-A985-DFD859EF9634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEADBD3D-AFC3-4B7B-A985-DFD859EF9634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEADBD3D-AFC3-4B7B-A985-DFD859EF9634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEADBD3D-AFC3-4B7B-A985-DFD859EF9634}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEA287E8-FE47-49BB-88D0-020A7F9989FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEA287E8-FE47-49BB-88D0-020A7F9989FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEA287E8-FE47-49BB-88D0-020A7F9989FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEA287E8-FE47-49BB-88D0-020A7F9989FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C76A413-00A9-41D0-AC26-F8C6A0BBDC8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C76A413-00A9-41D0-AC26-F8C6A0BBDC8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C76A413-00A9-41D0-AC26-F8C6A0BBDC8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C76A413-00A9-41D0-AC26-F8C6A0BBDC8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{141356B3-F586-4182-9FC4-2202D8D9325E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{141356B3-F586-4182-9FC4-2202D8D9325E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{141356B3-F586-4182-9FC4-2202D8D9325E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{141356B3-F586-4182-9FC4-2202D8D9325E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50F86EE9-FF2E-4208-B19C-3385F070949E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50F86EE9-FF2E-4208-B19C-3385F070949E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50F86EE9-FF2E-4208-B19C-3385F070949E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50F86EE9-FF2E-4208-B19C-3385F070949E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

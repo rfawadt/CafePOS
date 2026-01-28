@@ -1,0 +1,54 @@
+<UserControl x:Class="CafePos.Presentation.Views.ReportsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="40">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Reports" FontSize="26" FontWeight="Bold" Margin="0,0,12,0" />
+            <DatePicker SelectedDate="{Binding StartDate, Mode=TwoWay}" Width="140" Margin="8,0,0,0" />
+            <DatePicker SelectedDate="{Binding EndDate, Mode=TwoWay}" Width="140" Margin="8,0,0,0" />
+            <Button Content="Refresh" Command="{Binding RefreshCommand}" />
+            <Button Content="Export Summary CSV" Command="{Binding ExportSummaryCommand}" />
+            <Button Content="Export Orders CSV" Command="{Binding ExportOrdersCommand}" />
+            <Button Content="Back" Command="{Binding BackCommand}" />
+        </StackPanel>
+
+        <Grid Grid.Row="1" Margin="0,16,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Background="White" Padding="16" CornerRadius="12" Margin="0,0,12,0">
+                <StackPanel>
+                    <TextBlock Text="Daily Summary" FontWeight="SemiBold" />
+                    <ListView ItemsSource="{Binding DailySummaries}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Date" Width="120" DisplayMemberBinding="{Binding Date}" />
+                                <GridViewColumn Header="Gross" Width="120" DisplayMemberBinding="{Binding GrossSales}" />
+                                <GridViewColumn Header="Net" Width="120" DisplayMemberBinding="{Binding NetSales}" />
+                                <GridViewColumn Header="Orders" Width="80" DisplayMemberBinding="{Binding OrdersCount}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+            </Border>
+
+            <Border Grid.Column="1" Background="White" Padding="16" CornerRadius="12">
+                <StackPanel>
+                    <TextBlock Text="Monthly Summary" FontWeight="SemiBold" />
+                    <TextBlock Text="{Binding MonthlySummary.GrossSales, StringFormat=Gross: {0:C}}" />
+                    <TextBlock Text="{Binding MonthlySummary.NetSales, StringFormat=Net: {0:C}}" />
+                    <TextBlock Text="{Binding MonthlySummary.TaxTotal, StringFormat=Tax: {0:C}}" />
+                    <TextBlock Text="{Binding MonthlySummary.OrdersCount, StringFormat=Orders: {0}}" />
+                    <TextBlock Text="{Binding StatusMessage}" Foreground="#AA6B00" Margin="0,12,0,0" />
+                </StackPanel>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

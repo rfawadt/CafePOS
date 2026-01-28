@@ -49,7 +49,7 @@ public class ShiftService
 
     public async Task<ShiftSummaryDto> CloseShiftAsync(Guid shiftId, Guid userId, decimal countedCash, CancellationToken cancellationToken = default)
     {
-        using var transaction = await _db.BeginTransactionAsync(cancellationToken);
+        await using var transaction = await _db.BeginTransactionAsync(cancellationToken);
         try
         {
             var shift = _db.Shifts.FirstOrDefault(s => s.ShiftId == shiftId);

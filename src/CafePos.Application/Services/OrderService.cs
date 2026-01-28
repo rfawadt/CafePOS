@@ -238,7 +238,7 @@ public class OrderService
             throw new InvalidOperationException("Insufficient payment.");
         }
 
-        using var transaction = await _db.BeginTransactionAsync(cancellationToken);
+        await using var transaction = await _db.BeginTransactionAsync(cancellationToken);
         try
         {
             if (string.IsNullOrWhiteSpace(order.ReceiptNumber))
@@ -292,7 +292,7 @@ public class OrderService
             throw new InvalidOperationException("Only completed orders can be refunded.");
         }
 
-        using var transaction = await _db.BeginTransactionAsync(cancellationToken);
+        await using var transaction = await _db.BeginTransactionAsync(cancellationToken);
         try
         {
             var paymentEntities = refundPayments.Select(p => new Payment

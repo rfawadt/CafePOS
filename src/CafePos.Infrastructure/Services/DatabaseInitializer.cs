@@ -108,7 +108,7 @@ public class DatabaseInitializer
                 new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = latte.ItemId, Label = "Small", Price = 3.50m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 1, IsActive = true },
                 new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = latte.ItemId, Label = "Large", Price = 4.50m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 2, IsActive = true },
                 new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = espresso.ItemId, Label = null, Price = 2.50m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 1, IsActive = true },
-                new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = greenTea.ItemId, Label = \"Regular\", Price = 3.00m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 1, IsActive = true },
+                new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = greenTea.ItemId, Label = "Regular", Price = 3.00m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 1, IsActive = true },
                 new MenuItemPrice { ItemPriceId = Guid.NewGuid(), ItemId = croissant.ItemId, Label = null, Price = 2.75m, TaxCategoryId = tax?.TaxCategoryId, DisplayOrder = 1, IsActive = true }
             );
 
